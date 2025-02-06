@@ -17,8 +17,8 @@ class Detector(ADetector):
 
             # Feature 2: Tweet count exactly 100
             tweet_count = user.get('tweet_count', 0)
-            if tweet_count == 100:
-                confidence += 30
+            if tweet_count == 0:
+                confidence += 35
 
             # Feature 3: Empty description
             description = user.get('description', '')
