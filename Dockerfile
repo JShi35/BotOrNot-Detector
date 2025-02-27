@@ -1,9 +1,19 @@
 FROM python:3
 
-RUN pip install requests
-RUN pip install pydantic
+# add - xgboost for the ML model
+#     - torch + transformers for BERT
+RUN pip install --no-cache-dir \
+    requests \
+    pydantic \
+    xgboost \
+    torch \
+    transformers \
+    spacy \
+    pandas
 
-#Important so we will have access to the run.sh file 
-COPY . . 
+# Optional
+RUN python -m spacy download en_core_web_sm
+
+COPY . .
 
 CMD ["sh", "run.sh"]
