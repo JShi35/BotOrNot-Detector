@@ -7,7 +7,8 @@ RUN pip install --no-cache-dir \
     xgboost \
     torch \
     transformers \
-    pandas
+    pandas \
+    scikit-learn
 
 COPY . .
 
