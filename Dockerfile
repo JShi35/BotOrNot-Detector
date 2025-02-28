@@ -1,18 +1,13 @@
-FROM python:3
+FROM python:3.9.20
 
-# add - xgboost for the ML model
-#     - torch + transformers for BERT
+# Install dependencies
 RUN pip install --no-cache-dir \
     requests \
     pydantic \
     xgboost \
     torch \
     transformers \
-    spacy \
     pandas
-
-# Optional
-RUN python -m spacy download en_core_web_sm
 
 COPY . .
 
