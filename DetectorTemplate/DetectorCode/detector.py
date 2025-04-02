@@ -26,7 +26,7 @@ class Detector(ADetector):
         self.bert_model = BertModel.from_pretrained("bert-base-uncased").to(self.device)
         
         # 3) adjust the threshold for classification
-        self.threshold = 0.15
+        self.threshold = 0.14
     
     def detect_bot(self, session_data):
         """
